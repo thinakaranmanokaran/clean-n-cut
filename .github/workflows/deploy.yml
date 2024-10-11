@@ -1,49 +1,28 @@
-name: Deploy static content to Pages
+name: Daily Commit Bot
 
 on:
-  push:
-    branches: ['main']
+  schedule:
+    - cron: '0 0 * * *'  # This runs the action every day at midnight (UTC)
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  commit:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build the project
-        run: npm run build
-
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload files to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Create a dummy commit
+      run: |
+        echo "Commit made on $(date)" >> commit.log
+        git config --global user.name "thinakaranmanokaran"
+        git config --global user.email "thinakaranmanohar@yahoo.com"
+        git add commit.log
+        git commit -m "Daily commit on $(date)"
+        git push
