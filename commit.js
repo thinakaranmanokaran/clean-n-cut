@@ -11,8 +11,8 @@ const updateFile = () => {
 // Run git commands to add, commit, and push
 const commitChanges = () => {
   try {
-    execSync('git config --global user.email "your-email@example.com"');
-    execSync('git config --global user.name "Your Name"');
+    execSync('git config --global user.email "thinakaranmanohar@yahoo.com"');
+    execSync('git config --global user.name "thinakaranmanokaran"');
 
     execSync('git add README.md'); // Or any other file
     execSync('git commit -m "Daily auto-commit"');
