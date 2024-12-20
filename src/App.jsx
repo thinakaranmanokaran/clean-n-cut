@@ -1,5 +1,9 @@
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { jwtDecode  } from 'jwt-decode'; 
+
 import Input from "./components/Input";
+import UserProfile from './components/UserProfile';
 
 function App() {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -12,6 +16,32 @@ function App() {
             setSelectedImage(file);
         }
     };
+
+    const [users, setUsers] = useState([]);
+	const [currentUser, setCurrentUser] = useState(null);
+
+    const fetchUsers = async () => {
+		try {
+			const response = await axios.get('https://authback-jxx5.onrender.com/api/users');
+			setUsers(response.data);
+		} catch (error) {
+			console.error("Error fetching users:", error);
+		}
+	};
+
+    useEffect(() => {
+		fetchUsers();
+
+		// Check token on app load
+		const token = localStorage.getItem("authToken");
+		// console.log(token);  // Log the JWT token before sending it back in the response
+
+		if (token) {
+			const decoded = jwtDecode (token);
+			// console.log(decoded);
+			setCurrentUser(decoded);
+		}
+	}, []);
 
     const handleRemoveBg = async () => {
         if (!selectedImage) return;
@@ -84,6 +114,7 @@ function App() {
                 <div className="fixed w-80 h-80 md:w-1/4  md:h-2/4 top-0 left-0 z-0 rounded-full blur-3xl xs:animate-xsPosMove md:animate-posMove bg-[#66347F]"></div>
                 <div className="fixed w-80 h-80 md:w-1/4 md:-2/4 top-80 right-0 z-0 rounded-full blur-3xl xs:animate-xsNegMove md:animate-negMove bg-[#8CC0DE]"></div>
             </div>
+            <UserProfile currentUser={currentUser} />
         </div>
     );
 }
