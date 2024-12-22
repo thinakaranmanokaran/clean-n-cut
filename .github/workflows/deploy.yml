@@ -17,12 +17,3 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
-
-    - name: Create a dummy commit
-      run: |
-        echo "Commit made on $(date)" >> commit.log
-        git config --global user.name "thinakaranmanokaran"
-        git config --global user.email "thinakaranmanohar@yahoo.com"
-        git add commit.log
-        git commit -m "Daily commit on $(date)"
-        git push
