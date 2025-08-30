@@ -110,7 +110,7 @@ function App() {
             </div>
 
             {/* Background Animation */}
-            <div clasName="relative h-screen w-screen overflow-hidden " >
+            <div className="relative h-screen w-screen overflow-hidden " >
                 <div className="fixed w-80 h-80 md:w-1/4  md:h-2/4 top-0 left-0 z-0 rounded-full blur-3xl xs:animate-xsPosMove md:animate-posMove bg-[#66347F]"></div>
                 <div className="fixed w-80 h-80 md:w-1/4 md:-2/4 top-80 right-0 z-0 rounded-full blur-3xl xs:animate-xsNegMove md:animate-negMove bg-[#8CC0DE]"></div>
             </div>
