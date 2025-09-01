@@ -2,25 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Background Remover Tool Design System
+All colors, gradients, fonts, animations, and semantic tokens defined here.
+All colors MUST be HSL for consistency.
+*/
 
 @font-face {
-    font-family: 'avigea';
-    src: url('./assets/fonts/Avigea.otf');
+  font-family: InterBold;
+  src: url(assets/fonts/creato/CreatoDisplay-Bold.otf);
 }
 
 @font-face {
-    font-family: 'creatobold';
-    src: url('./assets/fonts/coolvetica-rg.otf');
-
+  font-family: InterMid;
+  src: url(assets/fonts/creato/CreatoDisplay-Medium.otf);
 }
 
-@font-face {
-    font-family: 'creato';
-    src: url('./assets/fonts/coolvetica-rg.otf');
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    /* Brand Colors - AI/Tech inspired blue-purple gradient theme */
+    --primary: 238 75% 58%;        /* Vibrant blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 242 85% 68%;   /* Lighter blue */
+    --primary-glow: 251 91% 95%;    /* Very light blue for glows */
+
+    /* Secondary Colors */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 215 25% 27%;
+
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Interactive Colors */
+    --muted: 220 13% 91%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 238 75% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 238 75% 58%;
+
+    /* Design System Tokens */
+    --radius: 12px;
+    --radius-lg: 16px;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(238 75% 58%), hsl(251 85% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 14% 96%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(251 91% 98%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(238 75% 58% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(238 75% 58% / 0.12);
+    --shadow-strong: 0 20px 60px hsl(238 75% 58% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Utility Classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
 }
 
-body{
-    overflow-x: hidden;
-    background: #191919;
-    /* margin-bottom: 20px; */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-light));
+  }
 }
