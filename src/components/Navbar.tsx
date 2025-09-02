@@ -32,8 +32,8 @@ export const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+            whileHover={{ scale: 1.05 }} onClick={() => scrollToSection("#hero")}
+            className="text-2xl font-bold bg-gradient-primary bg-clip-text cursor-pointer text-transparent"
           >
             BG Remover
           </motion.div>
@@ -50,7 +50,7 @@ export const Navbar = () => {
                 className="text-foreground hover:text-primary transition-smooth relative group"
               >
                 {item.label}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
               </motion.button>
             ))}
           </div>

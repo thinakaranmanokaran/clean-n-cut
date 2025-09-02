@@ -1,14 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# robots.txt for clean-n-cut
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://thinakaranmanokaran.github.io/clean-n-cut/sitemap.xml
+
+# Host (canonical site)
+Host: thinakaran.dev

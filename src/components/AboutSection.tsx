@@ -100,7 +100,7 @@ export const AboutSection = () => {
                 className="text-center relative"
               >
                 <div className="relative">
-                  <div className="text-6xl font-bold text-primary-glow mb-4">
+                  <div className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
                     {item.step}
                   </div>
                   <h4 className="text-xl font-semibold mb-2">{item.title}</h4>

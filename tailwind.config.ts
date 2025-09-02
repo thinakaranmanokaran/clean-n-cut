@@ -56,8 +56,8 @@ export default {
         },
       },
       fontFamily: {
-        interbold: ["InterBold", "sans-serif"], // <-- register here
-        intermid: ["InterMid", "sans-serif"], // <-- register here
+        sans: ["CreatoDisplay", "ui-sans-serif", "system-ui"], // overrides default
+        creato: ["CreatoDisplay", "sans-serif"], // optional custom usage
       },
       borderRadius: {
         lg: "var(--radius-lg)",

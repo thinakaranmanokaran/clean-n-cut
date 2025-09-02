@@ -73,7 +73,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl md:text-7xl font-interbold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Remove
             </span>{" "}
@@ -145,7 +145,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <div className="text-3xl xl:text-5xl xl:mt-6 font-bold bg-gradient-primary bg-clip-text text-transparent">
                 {stat.value}
               </div>
               <div className="text-muted-foreground">{stat.label}</div>

@@ -26,11 +26,11 @@ export const Footer = () => {
           <div className="flex items-center space-x-2 text-muted-foreground">
             <span>Made with</span>
             <motion.div
-              animate={{ 
+              animate={{
                 scale: [1, 1.2, 1],
                 rotate: [0, 5, -5, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -49,8 +49,12 @@ export const Footer = () => {
           viewport={{ once: true }}
           className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground"
         >
-          <p>
-            Powered by AI technology. Remove backgrounds with precision and speed.
+          <p className="text-lg ">
+            Developed by{" "}
+            <a href="https://thinakran.dev" target="_blank" rel="noopener noreferrer">
+              Thinakaran Manokaran
+            </a>{" "}
+            – Full-Stack Developer | React, Next.js, and AI-Powered Web Solutions
           </p>
         </motion.div>
       </div>

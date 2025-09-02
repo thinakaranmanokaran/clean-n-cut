@@ -9,10 +9,10 @@ import { Mail, Github, Twitter, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter", color: "hover:text-blue-400" },
-  { icon: Github, href: "#", label: "GitHub", color: "hover:text-gray-800" },
-  { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-600" },
-  { icon: Mail, href: "mailto:hello@bgremover.com", label: "Email", color: "hover:text-red-500" },
+  { icon: Twitter, href: "https://x.com/DheenaManohar", label: "Twitter", color: "hover:text-blue-400" },
+  { icon: Github, href: "https://github.com/thinakaranmanokaran", label: "GitHub", color: "hover:text-gray-800" },
+  { icon: Linkedin, href: "https://in.linkedin.com/in/thinakaran-manohar", label: "LinkedIn", color: "hover:text-blue-600" },
+  { icon: Mail, href: "mailto:dheenamanohar@gmail.com", label: "Email", color: "hover:text-red-500" },
 ];
 
 export const ContactSection = () => {
