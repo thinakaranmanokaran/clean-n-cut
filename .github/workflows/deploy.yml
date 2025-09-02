@@ -24,16 +24,13 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # 🚨 Ensure no symlinks or hardlinks remain
-      - run: |
-          find dist -type l -delete
-          tar -czf artifact.tar.gz -C dist .
+      # 🚨 remove symlinks just in case
+      - run: find dist -type l -delete
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: artifact.tar.gz
+          path: ./dist
 
   deploy:
     environment:
