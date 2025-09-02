@@ -24,13 +24,13 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # 🚨 remove symlinks just in case
+      # 🚨 Remove symlinks to avoid GitHub Pages error
       - run: find dist -type l -delete
 
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist   # 👈 upload whole dist, not just index.html
 
   deploy:
     environment:
