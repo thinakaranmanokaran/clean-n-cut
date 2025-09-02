@@ -2,8 +2,8 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [main]   # Deploy whenever you push to main
-  workflow_dispatch:   # Allow manual trigger
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -24,14 +24,16 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # 🚨 remove symlinks before uploading
-      - run: find dist -type l -delete
+      # 🚨 Ensure no symlinks or hardlinks remain
+      - run: |
+          find dist -type l -delete
+          tar -czf artifact.tar.gz -C dist .
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: ./dist
+          path: artifact.tar.gz
 
   deploy:
     environment:
