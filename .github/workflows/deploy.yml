@@ -24,6 +24,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # 🚨 remove symlinks before uploading
+      - run: find dist -type l -delete
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
