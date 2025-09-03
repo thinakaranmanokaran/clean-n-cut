@@ -23,7 +23,7 @@ export const Footer = () => {
             </motion.div>
           </div>
 
-          <div className="flex items-center space-x-2 text-muted-foreground">
+          <div className="flex items-center space-x-2 text-sm md:text-lg text-muted-foreground">
             <span>Made with</span>
             <motion.div
               animate={{

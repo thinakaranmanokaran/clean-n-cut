@@ -117,8 +117,8 @@ export const BackgroundRemoverSection = () => {
   };
 
   return (
-    <section id="background-remover" className="py-24 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="background-remover" className="py-24 md:px-6">
+      <div className="container mx-auto md:max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export const BackgroundRemoverSection = () => {
                 }`}
             >
               <CardContent
-                className="p-16 text-center cursor-pointer"
+                className="p-6 md:p-16 text-center cursor-pointer"
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}

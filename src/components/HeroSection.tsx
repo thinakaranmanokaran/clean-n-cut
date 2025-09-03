@@ -11,7 +11,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pb-16 md:pb-0">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -67,7 +67,7 @@ export const HeroSection = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center mt-6 px-6 max-w-4xl">
+      <div className="relative z-10 text-center mt-28 md:mt-6 px-6 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

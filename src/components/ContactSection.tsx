@@ -57,7 +57,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-gradient-secondary">
+    <section id="contact" className="py-24 md:px-6 bg-gradient-secondary">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
