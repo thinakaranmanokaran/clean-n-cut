@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://thinakaranmanokaran.github.io/clean-n-cut/</loc>
+    <lastmod>2025-09-02</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- If you add subpages/routes, list them here -->
+  <!-- Example:
+  <url>
+    <loc>https://thinakaranmanokaran.github.io/clean-n-cut/about</loc>
+    <lastmod>2025-09-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>
